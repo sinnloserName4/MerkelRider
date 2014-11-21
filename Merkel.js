@@ -18,9 +18,24 @@ Merkel.prototype.handleInput = function ()
         this.Accelerate();
     }
     if (arrowkeys.right.isDown) {
-       
+        this.RotateRight();
+    }
+    if (arrowkeys.left.isDown) {
+        this.RotateLeft();
     }
 }
+
+Merkel.prototype.RotateRight = function ()
+{
+
+}
+
+Merkel.prototype.RotateLeft = function ()
+{
+
+}
+
+
 Merkel.prototype.Slow = function ()
 {
     this.chopper.rightWheel.body.velocity.x -= SPEED;
