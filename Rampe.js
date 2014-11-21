@@ -10,5 +10,4 @@
     this.sprite.body.collideWorldBounds = true;
     this.sprite.body.collides(m.chopper.bikeCollisionGroup);
     this.sprite.body.moves = false;
-
 }
