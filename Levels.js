@@ -6,7 +6,7 @@
 
     ObstaclesCollisionGroup = game.physics.p2.createCollisionGroup();
 
-    //rampe = new Rampe(200, 200);
+    rampe = new Rampe(200, 200);
 }
 
 Level1.prototype.update = function () {
