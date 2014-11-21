@@ -1,4 +1,4 @@
-﻿var SPEED = 100;
+﻿var SPEED = 30;
 
 
 function Merkel(_x, _y)
