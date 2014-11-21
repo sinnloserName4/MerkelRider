@@ -1,6 +1,4 @@
-﻿
-
-function Rampe(_x,_y)
+﻿function Rampe(_x,_y)
 {
     this.sprite = game.add.sprite(_x, _y, "chopper");
     
