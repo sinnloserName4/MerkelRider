@@ -2,12 +2,10 @@
 
 var arrowkeys;
 var m;
-<<<<<<< HEAD
 var rampe;
 var ObstaclesCollisionGroup;
-=======
 var currentState;
->>>>>>> origin/master
+
 
 function preload()
 {
@@ -19,7 +17,7 @@ function preload()
 
 function create()
 {
-<<<<<<< HEAD
+
     
     game.physics.startSystem(Phaser.Physics.P2JS);
     game.physics.p2.gravity.y = 300;
@@ -27,9 +25,9 @@ function create()
     arrowkeys = game.input.keyboard.createCursorKeys();
     m = new Merkel(300, 450);
     rampe = new Rampe(200, 200);
-=======
+
     currentState = new MainMenu();        //start off with the main menu
->>>>>>> origin/master
+ 
 }
 
 function update()
