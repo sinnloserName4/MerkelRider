@@ -1,7 +1,8 @@
-﻿var forwardSPEED = 15;
-var backwardSPEED = -5;
-var maxSPEED = 500;
-var minSPEED = -300;
+﻿var FORWARD_SPEED = 15;
+var BACKWARD_SPEED = -5;
+var MAX_SPEED = 500;
+var MIN_SPEED = -300;
+var ROTATION_SPEED = 50;
 
 
 function Merkel(_x, _y)
@@ -28,23 +29,23 @@ Merkel.prototype.handleInput = function ()
 
 Merkel.prototype.RotateRight = function ()
 {
-
+    this.chopper.bike.body.rotateRight(ROTATION_SPEED);
 }
 
 Merkel.prototype.RotateLeft = function ()
 {
-
+    this.chopper.bike.body.rotateLeft(ROTATION_SPEED);
 }
 
 
 Merkel.prototype.Slow = function ()
 {
-    this.chopper.rightWheel.body.velocity.x = Math.max(this.chopper.rightWheel.body.velocity.x + backwardSPEED, minSPEED);
-    this.chopper.leftWheel.body.velocity.x = Math.max(this.chopper.leftWheel.body.velocity.x + backwardSPEED, minSPEED);
+    this.chopper.rightWheel.body.velocity.x = Math.max(this.chopper.rightWheel.body.velocity.x + BACKWARD_SPEED, MIN_SPEED);
+    this.chopper.leftWheel.body.velocity.x = Math.max(this.chopper.leftWheel.body.velocity.x + BACKWARD_SPEED, MIN_SPEED);
 }
 
 Merkel.prototype.Accelerate = function ()
 {
-    this.chopper.rightWheel.body.velocity.x = Math.min(this.chopper.rightWheel.body.velocity.x + forwardSPEED, maxSPEED);
-    this.chopper.leftWheel.body.velocity.x = Math.min(this.chopper.leftWheel.body.velocity.x + forwardSPEED, maxSPEED);
+    this.chopper.rightWheel.body.velocity.x = Math.min(this.chopper.rightWheel.body.velocity.x + FORWARD_SPEED, MAX_SPEED);
+    this.chopper.leftWheel.body.velocity.x = Math.min(this.chopper.leftWheel.body.velocity.x + FORWARD_SPEED, MAX_SPEED);
 }
