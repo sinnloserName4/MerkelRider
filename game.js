@@ -4,6 +4,7 @@ var arrowkeys;
 var m;
 var rampe;
 var car;
+var poller;
 var ObstaclesCollisionGroup;
 var currentState;
 
