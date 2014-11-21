@@ -16,6 +16,11 @@
     this.bike.body.setRectangle(130, 130);
     this.bike.body.debug = true;
 
+    //Spring(world, bodyA, bodyB, restLength, stiffness, damping, worldA, worldB, localA, localB)
+    this.spring1 = game.physics.p2.createSpring(this.bike, this.rightWheel, 70, 150, 50, null, null, [30, 0], null);
+    this.spring2 = game.physics.p2.createSpring(this.bike, this.leftWheel, 70, 150, 50, null, null, [-30, 0], null);
+
+
     //ADD CONSTRAINTS
     //PrismaticConstraint(world, bodyA, bodyB, lockRotation, anchorA, anchorB, axis, maxForce)
     this.constraint1 = game.physics.p2.createPrismaticConstraint(this.leftWheel, this.bike, false, [30, 0], [0, 0], [0, 1]);
