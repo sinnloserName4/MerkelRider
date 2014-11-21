@@ -12,7 +12,7 @@ function Merkel(_x, _y)
 Merkel.prototype.handleInput = function ()
 {
     if (arrowkeys.left.isDown) {
-        this.sprite.body.velocity.x = -SPEED;
+        this.slow();
     }
     if (arrowkeys.right.isDown) {
         this.Accelerate();
@@ -20,6 +20,10 @@ Merkel.prototype.handleInput = function ()
     if (arrowkeys.up.isDown) {
         this.sprite.body.velocity.y = -SPEED;
     }
+}
+Merkel.prototype.Slow = function ()
+{
+    this.sprite.body.velocity.x -= SPEED;
 }
 
 Merkel.prototype.Accelerate = function ()
