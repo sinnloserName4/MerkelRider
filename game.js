@@ -6,6 +6,8 @@ var m;
 function preload()
 {
     game.load.image("merkel", "content/merkel.jpg");
+    game.load.image("chopper", "content/chopper.png");
+    game.load.image("rad", "content/rad.png");
 }
 
 function create()

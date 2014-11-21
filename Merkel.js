@@ -6,6 +6,7 @@ function Merkel(_x, _y)
     this.health = 100;
     this.sprite = game.add.sprite(_x, _y, "merkel");
     game.physics.enable(this.sprite, Phaser.Physics.P2JS);
+    this.chopper = new Chopper(_x,_y);
 }
 
 Merkel.prototype.handleInput = function ()
