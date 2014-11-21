@@ -2,23 +2,22 @@
 
 var arrowkeys;
 var m;
+var currentState;
 
 function preload()
 {
     game.load.image("merkel", "content/merkel.jpg");
     game.load.image("chopper", "content/chopper.png");
     game.load.image("rad", "content/rad.png");
+    game.load.image("start_button", "content/start_game.png");
 }
 
 function create()
 {
-    game.physics.startSystem(Phaser.Physics.P2JS);
-    game.physics.p2.gravity.y = 300;
-    arrowkeys = game.input.keyboard.createCursorKeys();
-    m = new Merkel(300,450);
+    currentState = new MainMenu();        //start off with the main menu
 }
 
 function update()
 {
-    m.handleInput();
+    currentState.update();
 }
