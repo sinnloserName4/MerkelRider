@@ -3,6 +3,7 @@
 var arrowkeys;
 var m;
 var rampe;
+var car;
 var ObstaclesCollisionGroup;
 var currentState;
 
