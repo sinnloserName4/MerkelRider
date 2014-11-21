@@ -2,18 +2,24 @@
 
 var arrowkeys;
 var m;
+<<<<<<< HEAD
 var rampe;
 var ObstaclesCollisionGroup;
+=======
+var currentState;
+>>>>>>> origin/master
 
 function preload()
 {
     game.load.image("merkel", "content/merkel.jpg");
     game.load.image("chopper", "content/chopper.png");
     game.load.image("rad", "content/rad.png");
+    game.load.image("start_button", "content/start_game.png");
 }
 
 function create()
 {
+<<<<<<< HEAD
     
     game.physics.startSystem(Phaser.Physics.P2JS);
     game.physics.p2.gravity.y = 300;
@@ -21,9 +27,12 @@ function create()
     arrowkeys = game.input.keyboard.createCursorKeys();
     m = new Merkel(300, 450);
     rampe = new Rampe(200, 200);
+=======
+    currentState = new MainMenu();        //start off with the main menu
+>>>>>>> origin/master
 }
 
 function update()
 {
-    m.handleInput();
+    currentState.update();
 }
