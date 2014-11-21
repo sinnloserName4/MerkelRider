@@ -16,10 +16,18 @@
 
     //ADD CONSTRAINTS
     //PrismaticConstraint(world, bodyA, bodyB, lockRotation, anchorA, anchorB, axis, maxForce)
-    var constraint = game.physics.p2.createPrismaticConstraint(this.leftWheel, this.rightWheel, false, [30, 0], [0, 0], [0, 1]);
+    this.constraint1 = game.physics.p2.createPrismaticConstraint(this.leftWheel, this.bike, false, [30, 0], [0, 0], [0, 1]);
 
     //SET LIMITS
-    constraint.lowerLimitEnabled = constraint.upperLimitEnabled = true;
-    constraint.upperLimit = -1;
-    constraint.lowerLimit = -8;
+    this.constraint1.lowerLimitEnabled = constraint.upperLimitEnabled = true;
+    this.constraint1.upperLimit = -1;
+    this.constraint1.lowerLimit = -8;
+
+    //PrismaticConstraint(world, bodyA, bodyB, lockRotation, anchorA, anchorB, axis, maxForce)
+    this.constraint2 = game.physics.p2.createPrismaticConstraint(this.rightWheel, this.bike, false, [-30, 0], [0, 0], [0, 1]);
+
+    //SET LIMITS
+    this.constraint2.lowerLimitEnabled = constraint.upperLimitEnabled = true;
+    this.constraint2.upperLimit = -1;
+    this.constraint2.lowerLimit = -8;
 }
