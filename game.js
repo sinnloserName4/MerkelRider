@@ -2,6 +2,8 @@
 
 var arrowkeys;
 var m;
+var rampe;
+var ObstaclesCollisionGroup;
 
 function preload()
 {
@@ -12,10 +14,13 @@ function preload()
 
 function create()
 {
+    
     game.physics.startSystem(Phaser.Physics.P2JS);
     game.physics.p2.gravity.y = 300;
+    ObstaclesCollisionGroup = game.physics.p2.createCollisionGroup();
     arrowkeys = game.input.keyboard.createCursorKeys();
-    m = new Merkel(300,450);
+    m = new Merkel(300, 450);
+    rampe = new Rampe(200, 200);
 }
 
 function update()

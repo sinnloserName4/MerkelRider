@@ -13,16 +13,19 @@
     this.leftWheel.body.debug = true;
     this.leftWheel.body.mass = 1;
     this.leftWheel.body.setCollisionGroup(this.bikeCollisionGroup);
+    this.leftWheel.body.collides(ObstaclesCollisionGroup);
 
     this.rightWheel.body.setCircle(25);
     this.rightWheel.body.debug = true;
     this.rightWheel.body.mass = 1;
     this.rightWheel.body.setCollisionGroup(this.bikeCollisionGroup);
+    this.leftWheel.body.collides(ObstaclesCollisionGroup);
 
     this.bike.body.setRectangle(50, 50);
     this.bike.body.debug = true;
     this.bike.body.mass = 1;
     this.bike.body.setCollisionGroup(this.bikeCollisionGroup);
+    this.leftWheel.body.collides(ObstaclesCollisionGroup);
 
     //Spring(world, bodyA, bodyB, restLength, stiffness, damping, worldA, worldB, localA, localB)
     this.spring1 = game.physics.p2.createSpring(this.bike, this.rightWheel, 70, 150, 50, null, null, [30, 0], null);
