@@ -1,17 +1,27 @@
-﻿function Merkel(_x,_y) {
+﻿var SPEED = 100;
+
+
+function Merkel(_x, _y)
+{
+    this.health = 100;
     this.sprite = game.add.sprite(_x, _y, "merkel");
     game.physics.enable(this.sprite, Phaser.Physics.P2JS);
 }
 
-Merkel.prototype.handleInput = function () {
+Merkel.prototype.handleInput = function ()
+{
     if (arrowkeys.left.isDown) {
-        this.sprite.body.velocity.x = -100;
+        this.sprite.body.velocity.x = -SPEED;
     }
     if (arrowkeys.right.isDown) {
-        this.sprite.body.velocity.x = 100;
+        this.Accelerate();
     }
     if (arrowkeys.up.isDown) {
-        this.sprite.body.velocity.y = -100;
+        this.sprite.body.velocity.y = -SPEED;
     }
 }
 
+Merkel.prototype.Accelerate = function ()
+{
+    this.sprite.body.velocity.x += SPEED;
+}
