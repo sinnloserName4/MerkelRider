@@ -1,10 +1,10 @@
 ﻿function Poller(_x, _y) {
-    this.sprite = game.add.sprite(_x, _y-25, "chopper");
+    this.sprite = game.add.sprite(_x, _y-25, "poller");
 
-    game.physics.p2.enable(this.sprite, true);
+    game.physics.p2.enable(this.sprite);
 
     this.sprite.body.clearShapes();
-    this.sprite.body.setRectangle(10, 50);
+    this.sprite.body.setRectangle(20, 50);
     this.sprite.body.data.gravityScale = 0;
     this.sprite.body.setCollisionGroup(ObstaclesCollisionGroup);
     this.sprite.body.collides(m.chopper.bikeCollisionGroup);
