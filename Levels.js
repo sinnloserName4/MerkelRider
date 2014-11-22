@@ -11,7 +11,7 @@ function Level2()
 {
     this.level = 2;
 
-    game.add.sprite(0, 300, "hinweis1");
+    this.joachim = game.add.sprite(0, 300, "hinweis1");
     // WORLD BOUNDS
     game.world.setBounds(0, 0, 20000, 800);
 
@@ -45,6 +45,7 @@ Level2.prototype.delete = function () {
         }
         Obstacles[i].delete();
     }
+    this.joachim.destroy();
 }
 
 Level2.prototype.reset = function () {
