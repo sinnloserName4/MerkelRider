@@ -7,3 +7,7 @@
     this.sprite.body.collides(m.chopper.bikeCollisionGroup);
     this.sprite.body.static = true;
 }
+
+Winflag.prototype.delete = function () {
+    this.sprite.destroy();
+}
