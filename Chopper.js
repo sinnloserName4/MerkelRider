@@ -1,7 +1,7 @@
 ﻿function Chopper(_x,_y) {
-    this.leftWheel = game.add.sprite(_x-50, _y+100, "rad");
-    this.rightWheel = game.add.sprite(_x + 50, _y + 100, "rad");
-    this.bike = game.add.sprite(_x, _y-30, "chopper");
+    this.leftWheel = game.add.sprite(_x-50, _y-25, "rad");
+    this.rightWheel = game.add.sprite(_x + 50, _y-25, "rad");
+    this.bike = game.add.sprite(_x, _y-100, "chopper");
 
     game.physics.enable([this.leftWheel, this.rightWheel, this.bike], Phaser.Physics.P2JS);
 
@@ -54,5 +54,5 @@
 }
 
 function die() {
-    currentState = new Level1();
+    currentState = new Level2();
 }

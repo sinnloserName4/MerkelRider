@@ -1,7 +1,7 @@
 ﻿function Car(_x, _y) {
-    this.sprite = game.add.sprite(_x, _y, "chopper");
-    this.leftWheel = game.add.sprite(_x - 100, _y + 50, "rad");
-    this.rightWheel = game.add.sprite(_x + 100, _y + 50, "rad");
+    this.sprite = game.add.sprite(_x, _y - 65, "chopper");
+    this.leftWheel = game.add.sprite(_x - 100, _y-15, "rad");
+    this.rightWheel = game.add.sprite(_x + 100, _y-15, "rad");
 
     game.physics.p2.enable([this.sprite,this.leftWheel,this.rightWheel], true);
 
