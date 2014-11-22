@@ -11,6 +11,7 @@ function Level2()
 {
     // WORLD BOUNDS
     game.world.setBounds(0, 0, 20000, 600);
+
     // MAIN CHARACTER
     m = new Merkel(200, 600);
     // CAMERA
@@ -31,6 +32,7 @@ function Level2()
 Level2.prototype.update = function () 
 {
     m.handleInput();
+    snow.update();
 }
 
 Level2.prototype.delete = function () {
@@ -77,6 +79,7 @@ function Level3() {
 
 Level3.prototype.update = function () {
     m.handleInput();
+    snow.update();
 }
 
 Level3.prototype.delete = function () {
