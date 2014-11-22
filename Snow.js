@@ -38,18 +38,25 @@ Snow.prototype.update = function () {
             item.body.x = game.world.randomX;
             item.body.y = -50;
         }
+        item.body.velocity.x = -100;
+        item.body.velocity.y = 200;
+
     });
     this.mediumSnowFlakes.forEach(function (item) {
         if (item.body.y > 600) {
             item.body.x = game.world.randomX;
             item.body.y = -50;
         }
+        item.body.velocity.x = -100;
+        item.body.velocity.y = 150;
     });
     this.hugeSnowFlakes.forEach(function (item) {
         if (item.body.y > 600) {
             item.body.x = game.world.randomX;
             item.body.y = -50;
         }
+        item.body.velocity.x = -50;
+        item.body.velocity.y = 150;
     });
 }
 
