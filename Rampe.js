@@ -8,5 +8,4 @@
     this.sprite.body.static = true;
     this.sprite.body.setCollisionGroup(ObstaclesCollisionGroup);
     this.sprite.body.collides(m.chopper.bikeCollisionGroup);
-    
 }
