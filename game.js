@@ -11,7 +11,7 @@ var snow;
 
 function preload()
 {
-    game.load.image("chopper", "content/chopper.png");
+    game.load.image("chopper", "content/chopper2.png");
     game.load.image("tire", "content/tire.png");
     game.load.image("start_button", "content/start_game.png");
     game.load.image("credits", "content/credits.png");
