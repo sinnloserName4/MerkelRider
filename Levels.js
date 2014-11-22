@@ -1,4 +1,18 @@
-﻿﻿function Level2() 
+﻿function Level1() {
+    game.world.setBounds(0, 0, 200000, 600);
+    m = new Merkel(300, 450);
+    //rampe = new Rampe(200, 200);
+    car = new Car(500, 550);
+
+    game.camera.follow(m.chopper.bike);
+}
+
+Level1.prototype.update = function () {
+    m.handleInput();
+}
+
+
+function Level2()
 {
     // WORLD BOUNDS
     game.world.setBounds(0, 0, 20000, 600);
@@ -24,17 +38,3 @@ Level2.prototype.update = function ()
 
 
 
-
-
-function Level1() {
-    game.world.setBounds(0, 0, 200000, 600);
-    m = new Merkel(300, 450);
-    //rampe = new Rampe(200, 200);
-    car = new Car(500, 550);
-
-    game.camera.follow(m.chopper.bike);
-}
-
-Level1.prototype.update = function () {
-    m.handleInput();
-}
