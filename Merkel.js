@@ -7,7 +7,6 @@ var ROTATION_SPEED = 50;
 
 function Merkel(_x, _y)
 {
-    this.health = 100;
     this.chopper = new Chopper(_x,_y);
 }
 
