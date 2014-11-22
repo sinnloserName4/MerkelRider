@@ -8,7 +8,7 @@
 Snow.prototype.createSnowFlakes = function() {
     var a, b, c;
 
-    for (var i = 0; i < 150; i++) {
+    for (var i = 0; i < 50; i++) {
         a = this.tinySnowFlakes.create(game.world.randomX, game.world.randomY, "tinysnowflake");
         b = this.mediumSnowFlakes.create(game.world.randomX, game.world.randomY, "mediumsnowflake");
         c = this.hugeSnowFlakes.create(game.world.randomX, game.world.randomY, "hugesnowflake");

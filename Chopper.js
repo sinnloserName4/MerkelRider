@@ -2,7 +2,7 @@
     this.leftWheel = game.add.sprite(_x-100, _y-25, "tire");
     this.rightWheel = game.add.sprite(_x + 100, _y-25, "tire");
     this.bike = game.add.sprite(_x, _y - 100, "chopper");
-    this.merkel = game.add.sprite(_x, _y-250, "merkel");
+    this.merkel = game.add.sprite(_x, _y-200, "merkel");
 
     game.physics.enable([this.leftWheel, this.rightWheel, this.bike, this.merkel], Phaser.Physics.P2JS);
 
@@ -11,7 +11,6 @@
     game.physics.p2.updateBoundsCollisionGroup();
 
     this.leftWheel.body.setCircle(25);
-    //this.leftWheel.body.debug = true;
     this.leftWheel.body.mass = 1;
     this.leftWheel.body.setCollisionGroup(this.bikeCollisionGroup);
     this.leftWheel.body.collideWorldBounds = true;
@@ -19,7 +18,6 @@
     this.leftWheel.body.collides(winFlagCollisionGroup, nextLevel, this);
 
     this.rightWheel.body.setCircle(25);
-    //this.rightWheel.body.debug = true;
     this.rightWheel.body.mass = 1;
     this.rightWheel.body.setCollisionGroup(this.bikeCollisionGroup);
     this.rightWheel.body.collideWorldBounds = true;
@@ -27,7 +25,6 @@
     this.rightWheel.body.collides(winFlagCollisionGroup, nextLevel, this);
 
     this.bike.body.setRectangle(200, 80);
-    //this.bike.body.debug = true;
     this.bike.body.mass = 1;
     this.bike.body.setCollisionGroup(this.bikeCollisionGroup);
     this.bike.body.collideWorldBounds = true;
@@ -35,7 +32,6 @@
     this.bike.body.collides(winFlagCollisionGroup, nextLevel, this);
 
     this.merkel.body.setRectangle(100, 70);
-    //this.merkel.body.debug = true;
     this.merkel.body.mass = 1;
     this.merkel.body.setCollisionGroup(this.bikeCollisionGroup);
     this.merkel.body.collideWorldBounds = true;
