@@ -5,7 +5,7 @@
 
     this.textObject = game.add.text(0, 0, creditsText, style);
 
-    this.tween = game.add.tween(this.textObject).to({ y: -600 }, 4000, Phaser.Easing.Linear.None).loop().start();
+    this.tween = game.add.tween(this.textObject).to({ y: -800 }, 4000, Phaser.Easing.Linear.None).loop().start();
 }
 
 Credits.prototype.update = function () {

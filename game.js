@@ -8,6 +8,7 @@ var winFlagCollisionGroup;
 var currentState;
 var Obstacles;
 var snow;
+var pausebutton;
 
 function preload()
 {
@@ -24,6 +25,14 @@ function preload()
     game.load.image("nextLevel", "content/nextlevel.png");
     game.load.image("hinweis1", "content/joachim_hinweis1.png");
 
+    //pause menü
+    game.load.image("pausemenu", "content/pausemenü.png");
+    game.load.image("pausebutton", "content/pausebutton.png");
+    game.load.image("continue", "content/continue.png");
+    game.load.image("selectlevel", "content/selectlevel.png");
+    game.load.image("restart", "content/restart.png");
+    game.load.image("exit", "content/exit.png");
+
     game.time.advancedTiming = true;
 }
 
@@ -37,6 +46,11 @@ function create()
     ObstaclesCollisionGroup = game.physics.p2.createCollisionGroup();
     winFlagCollisionGroup = game.physics.p2.createCollisionGroup();
     currentState = new MainMenu();        //start off with the main menu
+
+    pausebutton = new Pause();
+
+    game.input.onDown.add(unpause, self);
+    pausebutton.pausebutton.alpha = 0;
 }
 
 function update()
@@ -47,5 +61,7 @@ function update()
 function render()
 {
     game.debug.text(game.time.fps || '--', 2, 14, "#00ff00");
-    game.debug.text(currentState.level,2,25, "#00ff00");
+    game.debug.text(currentState.level, 2, 25, "#00ff00");
+    game.debug.text(game.camera.position.x, 2, 45, "#00ff00");
+    game.debug.text(game.camera.position.y, 2, 60, "#00ff00");
 }

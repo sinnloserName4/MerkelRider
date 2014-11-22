@@ -8,9 +8,18 @@ MainMenu.prototype.update = function () {
 
 }
 
+MainMenu.prototype.delete = function () {
+
+}
+
+MainMenu.prototype.reset = function () {
+
+}
+
 function startGame() {
     this.startButton.destroy();
     this.credits.destroy();
+    pausebutton.pausebutton.alpha = 1;
     currentState = new Level2();
     snow = new Snow();
 }
