@@ -8,5 +8,8 @@ MainMenu.prototype.update = function () {
 
 function startGame() {
     this.startButton.destroy();
-    currentState = new Level1();
+    currentState = new Level2();
 }
+
+
+

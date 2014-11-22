@@ -7,6 +7,7 @@ var car;
 var poller;
 var ObstaclesCollisionGroup;
 var currentState;
+var Obstacles;
 
 function preload()
 {
@@ -18,6 +19,11 @@ function preload()
 
 function create()
 {
+    Obstacles = new Array(100);
+    game.physics.startSystem(Phaser.Physics.P2JS);
+    game.physics.p2.gravity.y = 300;
+    arrowkeys = game.input.keyboard.createCursorKeys();
+    ObstaclesCollisionGroup = game.physics.p2.createCollisionGroup();
     currentState = new MainMenu();        //start off with the main menu
 }
 
