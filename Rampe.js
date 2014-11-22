@@ -1,10 +1,10 @@
 ﻿function Rampe(_x, _y)
 {
     
-    this.sprite = game.add.sprite(_x, _y-215, "rampe");
+    this.sprite = game.add.sprite(_x+20, _y-205, "rampe");
 
 
-    game.physics.p2.enable(this.sprite, true);
+    game.physics.p2.enable(this.sprite);
     this.sprite.body.clearShapes();
     this.sprite.body.addPolygon({}, [[0, 205], [305, 0], [305, 205]]);
     this.sprite.anchor.x = 0.67;
