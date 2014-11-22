@@ -1,13 +1,14 @@
-﻿function Rampe(_x,_y)
+﻿function Rampe(_x, _y)
 {
-    this.x = _x;
-    this.y = _y - 200;
-    this.sprite = game.add.sprite(this.x, this.y, "rampe");
     
+    this.sprite = game.add.sprite(_x, _y-215, "rampe");
+
+
     game.physics.p2.enable(this.sprite, true);
     this.sprite.body.clearShapes();
-    this.sprite.body.addPolygon({}, [[0, 200], [300, 0], [300,200]]);
-
+    this.sprite.body.addPolygon({}, [[0, 205], [305, 0], [305, 205]]);
+    this.sprite.anchor.x = 0.67;
+    this.sprite.anchor.y = 0.81;
 
     this.sprite.body.static = true;
     this.sprite.body.setCollisionGroup(ObstaclesCollisionGroup);

@@ -16,7 +16,7 @@ function Level2()
     // CAMERA
     game.camera.follow(m.chopper.bike);
     // OBSTACLES
-    Obstacles[0] = new Rampe(300, 700);
+    Obstacles[0] = new Rampe(500, 600);
     Obstacles[1] = new Car(1500, 600);
     Obstacles[2] = new Car(1850, 600);
     Obstacles[3] = new Car(2200, 600);
