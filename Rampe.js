@@ -2,7 +2,7 @@
 {
     this.x = _x;
     this.y = _y - 200;
-    this.sprite = game.add.sprite(this.x, this.y, "rad");
+    this.sprite = game.add.sprite(this.x, this.y, "rampe");
     
     game.physics.p2.enable(this.sprite, true);
     this.sprite.body.clearShapes();

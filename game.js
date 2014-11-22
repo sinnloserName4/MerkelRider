@@ -14,7 +14,8 @@ function preload()
     game.load.image("chopper", "content/chopper.png");
     game.load.image("rad", "content/rad.png");
     game.load.image("start_button", "content/start_game.png");
-    game.load.image("poller","content/poller.png")
+    game.load.image("poller", "content/poller.png")
+    game.load.image("rampe", "content/rampe.png");
 }
 
 function create()
