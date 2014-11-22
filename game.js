@@ -46,4 +46,5 @@ function update()
 function render()
 {
     game.debug.text(game.time.fps || '--', 2, 14, "#00ff00");
+    game.debug.text(currentState.level,2,25, "#00ff00");
 }

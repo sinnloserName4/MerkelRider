@@ -1,9 +1,18 @@
-﻿function NextLevel(last)
+﻿function NextLevel(_last)
 {
-    this.nextButton = game.add.button(300, 250, "start_button", NextLevel, this);
+    this.last = _last
+    this.level = 0;
+    currentState.delete();
+    this.nextButton = game.add.button(300, 250, "nextLevel", Next, this);
 }
 
 NextLevel.prototype.update = function()
 {
 
+}
+
+function Next()
+{
+    //switchCase
+    currentState = new MainMenu();
 }

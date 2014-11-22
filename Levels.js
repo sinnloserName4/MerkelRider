@@ -1,5 +1,5 @@
 ﻿function Level1() {
-    
+    this.level = 1;
 }
 
 Level1.prototype.update = function () {
@@ -9,6 +9,7 @@ Level1.prototype.update = function () {
 
 function Level2()
 {
+    this.level = 2;
     // WORLD BOUNDS
     game.world.setBounds(0, 0, 20000, 800);
 
@@ -25,8 +26,7 @@ function Level2()
     Obstacles[5] = new Poller(2590, 800);
     Obstacles[6] = new Poller(2680, 800);
     Obstacles[7] = new Ground(0, 815);
-
-    win = new WinFlag(4000, 550);
+    Obstacles[8] = new WinFlag(4000, 550);
 }
 
 Level2.prototype.update = function () 

@@ -75,5 +75,5 @@ function die() {
 }
 
 function nextLevel() {
-    currentState.next();
+    currentState = new NextLevel(currentState.level);
 }
