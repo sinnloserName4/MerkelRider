@@ -65,6 +65,4 @@
 
 Car.prototype.delete = function () {
     this.sprite.destroy();
-    this.leftWheel.destroy();
-    this.rightWheel.destroy();
 }
