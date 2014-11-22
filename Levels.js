@@ -20,15 +20,8 @@ function Level2()
     // CAMERA
     game.camera.follow(m.chopper.bike);
     // OBSTACLES
-    Obstacles[0] = new Rampe(500, 800);
-    Obstacles[1] = new Car(1500, 800);
-    Obstacles[2] = new Car(1850, 800);
-    Obstacles[3] = new Car(2200, 800);
-    Obstacles[4] = new Poller(2500, 800);
-    Obstacles[5] = new Poller(2590, 800);
-    Obstacles[6] = new Poller(2680, 800);
-    Obstacles[7] = new Ground(0, 815);
-    Obstacles[8] = new WinFlag(4000, 550);
+    Obstacles[0] = new Car(500, 800, "van");
+    Obstacles[1] = new WinFlag(2000, 500);
 }
 
 Level2.prototype.update = function () 

@@ -33,6 +33,12 @@ function preload()
     game.load.image("restart", "content/restart.png");
     game.load.image("exit", "content/exit.png");
 
+    game.load.image("car1", "content/car1.png");
+    game.load.image("car2", "content/car2.png");
+    game.load.image("sportcar", "content/sportcar.png");
+    game.load.image("truck", "content/truck.png");
+    game.load.image("van", "content/van.png");
+    
     game.time.advancedTiming = true;
 }
 
