@@ -43,7 +43,6 @@ Level2.prototype.delete = function () {
         }
         Obstacles[i].delete();
     }
-    //snow.delete();
 }
 
 Level2.prototype.reset = function () {
@@ -80,6 +79,7 @@ function Level3() {
 
 Level3.prototype.update = function () {
     m.handleInput();
+    snow.update();
 }
 
 Level3.prototype.delete = function () {
