@@ -1,0 +1,18 @@
+DINGE DIE WIR NOCH TUN WOLLEN
+
+- Front-/Backflip
+- Weihnachtsbaum malen
+- Autos malen
+- Joachim sinnvoll einfügen (am anfang von jedem level) + Text
+- Hintergrund
+- Bäume als Hindernisse
+- Musik
+- Soundeffekte
+- Explosion bei Tod
+- Level geschafft Screen
+- Levels bauen
+
+(- Score / Highscore)
+(- Merkel mit Baum)
+(- wehender Mantel)
+((- Schäuble))

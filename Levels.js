@@ -59,10 +59,13 @@ Level2.prototype.next = function () {
 function Level3() {
     // WORLD BOUNDS
     game.world.setBounds(0, 0, 20000, 600);
+
+    // MAIN CHARACTER
+    m = new Merkel(200, 600);
     // CAMERA
     game.camera.follow(m.chopper.bike);
     // OBSTACLES
-    Obstacles[0] = new Rampe(200, 700);
+    Obstacles[0] = new Rampe(500, 600);
     Obstacles[1] = new Car(1500, 600);
     Obstacles[2] = new Car(1850, 600);
     Obstacles[3] = new Car(2200, 600);
@@ -70,9 +73,6 @@ function Level3() {
     Obstacles[5] = new Poller(2590, 600);
     Obstacles[6] = new Poller(2680, 600);
     Obstacles[7] = new Ground(0, 615);
-
-    // MAIN CHARACTER
-    m = new Merkel(200, 600);
 
     win = new WinFlag(4000, 550);
 }
