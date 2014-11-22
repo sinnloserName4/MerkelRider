@@ -2,10 +2,9 @@
 
 var arrowkeys;
 var m;
-var rampe;
-var car;
-var poller;
+var win;
 var ObstaclesCollisionGroup;
+var winFlagCollisionGroup;
 var currentState;
 var Obstacles;
 
@@ -25,6 +24,7 @@ function create()
     game.physics.p2.gravity.y = 300;
     arrowkeys = game.input.keyboard.createCursorKeys();
     ObstaclesCollisionGroup = game.physics.p2.createCollisionGroup();
+    winFlagCollisionGroup = game.physics.p2.createCollisionGroup();
     currentState = new MainMenu();        //start off with the main menu
 }
 

@@ -15,6 +15,7 @@
     this.leftWheel.body.setCollisionGroup(this.bikeCollisionGroup);
     this.leftWheel.body.collideWorldBounds = true;
     this.leftWheel.body.collides(ObstaclesCollisionGroup);
+    this.leftWheel.body.collides(winFlagCollisionGroup, nextLevel, this);
 
     this.rightWheel.body.setCircle(25);
     this.rightWheel.body.debug = true;
@@ -22,6 +23,7 @@
     this.rightWheel.body.setCollisionGroup(this.bikeCollisionGroup);
     this.rightWheel.body.collideWorldBounds = true;
     this.rightWheel.body.collides(ObstaclesCollisionGroup);
+    this.rightWheel.body.collides(winFlagCollisionGroup, nextLevel, this);
 
     this.bike.body.setRectangle(50, 50);
     this.bike.body.debug = true;
@@ -29,7 +31,7 @@
     this.bike.body.setCollisionGroup(this.bikeCollisionGroup);
     this.bike.body.collideWorldBounds = true;
     this.bike.body.collides(ObstaclesCollisionGroup, die, this);
-
+    this.bike.body.collides(winFlagCollisionGroup, nextLevel, this);
 
     //Spring(world, bodyA, bodyB, restLength, stiffness, damping, worldA, worldB, localA, localB)
     this.spring1 = game.physics.p2.createSpring(this.bike, this.rightWheel, 70, 150, 50, null, null, [30, 0], null);
@@ -61,4 +63,8 @@ Chopper.prototype.delete = function () {
 
 function die() {
     currentState.reset();
+}
+
+function nextLevel() {
+    currentState.next();
 }
