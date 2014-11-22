@@ -3,6 +3,8 @@
     this.last = _last
     this.level = 0;
     currentState.delete();
+    game.camera.unfollow();
+    game.camera.reset();
     this.nextButton = game.add.button(300, 250, "nextLevel", Next, this);
 }
 
