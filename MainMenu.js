@@ -9,6 +9,7 @@ MainMenu.prototype.update = function () {
 function startGame() {
     this.startButton.destroy();
     currentState = new Level2();
+    snow = new Snow();
 }
 
 
