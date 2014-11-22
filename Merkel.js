@@ -49,3 +49,7 @@ Merkel.prototype.Accelerate = function ()
     this.chopper.rightWheel.body.velocity.x = Math.min(this.chopper.rightWheel.body.velocity.x + FORWARD_SPEED, MAX_SPEED);
     this.chopper.leftWheel.body.velocity.x = Math.min(this.chopper.leftWheel.body.velocity.x + FORWARD_SPEED, MAX_SPEED);
 }
+
+Merkel.prototype.delete = function () {
+    this.chopper.delete();
+}

@@ -28,6 +28,7 @@ function Level2()
     Obstacles[4] = new Poller(2500, 600);
     Obstacles[5] = new Poller(2590, 600);
     Obstacles[6] = new Poller(2680, 600);
+    Obstacles[7] = new Ground(0, 610);
 
 }
 
@@ -36,5 +37,14 @@ Level2.prototype.update = function ()
     m.handleInput();
 }
 
-
+Level2.prototype.reset = function () {
+    m.delete();
+    for (var i = 0; i < Obstacles.length; i++) {
+        if (Obstacles[i] === undefined) {
+            break;
+        }
+        Obstacles[i].delete();
+    }
+    Level2();
+}
 

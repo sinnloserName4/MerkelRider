@@ -13,3 +13,7 @@
     this.sprite.body.setCollisionGroup(ObstaclesCollisionGroup);
     this.sprite.body.collides(m.chopper.bikeCollisionGroup);
 }
+
+Rampe.prototype.delete = function () {
+    this.sprite.destroy();
+}

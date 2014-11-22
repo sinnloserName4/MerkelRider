@@ -26,3 +26,9 @@
     this.rightWheel.body.collides(m.chopper.bikeCollisionGroup);
     this.rightWheel.body.static = true;
 }
+
+Car.prototype.delete = function () {
+    this.sprite.destroy();
+    this.leftWheel.destroy();
+    this.rightWheel.destroy();
+}

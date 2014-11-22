@@ -53,6 +53,12 @@
     this.constraint2.lowerLimit = -8;
 }
 
+Chopper.prototype.delete = function () {
+    this.leftWheel.destroy();
+    this.rightWheel.destroy();
+    this.bike.destroy();
+}
+
 function die() {
-    currentState = new Level2();
+    currentState.reset();
 }
