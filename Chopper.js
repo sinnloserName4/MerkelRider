@@ -1,6 +1,6 @@
 ﻿function Chopper(_x,_y) {
-    this.leftWheel = game.add.sprite(_x-50, _y-25, "rad");
-    this.rightWheel = game.add.sprite(_x + 50, _y-25, "rad");
+    this.leftWheel = game.add.sprite(_x-50, _y-25, "tire");
+    this.rightWheel = game.add.sprite(_x + 50, _y-25, "tire");
     this.bike = game.add.sprite(_x, _y-100, "chopper");
 
     game.physics.enable([this.leftWheel, this.rightWheel, this.bike], Phaser.Physics.P2JS);
@@ -10,7 +10,7 @@
     game.physics.p2.updateBoundsCollisionGroup();
 
     this.leftWheel.body.setCircle(25);
-    this.leftWheel.body.debug = true;
+    //this.leftWheel.body.debug = true;
     this.leftWheel.body.mass = 1;
     this.leftWheel.body.setCollisionGroup(this.bikeCollisionGroup);
     this.leftWheel.body.collideWorldBounds = true;
@@ -18,7 +18,7 @@
     this.leftWheel.body.collides(winFlagCollisionGroup, nextLevel, this);
 
     this.rightWheel.body.setCircle(25);
-    this.rightWheel.body.debug = true;
+   // this.rightWheel.body.debug = true;
     this.rightWheel.body.mass = 1;
     this.rightWheel.body.setCollisionGroup(this.bikeCollisionGroup);
     this.rightWheel.body.collideWorldBounds = true;
@@ -26,7 +26,7 @@
     this.rightWheel.body.collides(winFlagCollisionGroup, nextLevel, this);
 
     this.bike.body.setRectangle(50, 50);
-    this.bike.body.debug = true;
+   // this.bike.body.debug = true;
     this.bike.body.mass = 1;
     this.bike.body.setCollisionGroup(this.bikeCollisionGroup);
     this.bike.body.collideWorldBounds = true;

@@ -1,9 +1,9 @@
 ﻿function Car(_x, _y) {
     this.sprite = game.add.sprite(_x, _y - 65, "chopper");
-    this.leftWheel = game.add.sprite(_x - 100, _y-15, "rad");
-    this.rightWheel = game.add.sprite(_x + 100, _y-15, "rad");
+    this.leftWheel = game.add.sprite(_x - 100, _y-25, "tire");
+    this.rightWheel = game.add.sprite(_x + 100, _y-25, "tire");
 
-    game.physics.p2.enable([this.sprite,this.leftWheel,this.rightWheel], true);
+    game.physics.p2.enable([this.sprite,this.leftWheel,this.rightWheel],true);
 
     this.sprite.body.clearShapes();
     this.sprite.body.setRectangle(200, 50);
