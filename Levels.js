@@ -10,6 +10,8 @@ Level1.prototype.update = function () {
 function Level2()
 {
     this.level = 2;
+
+    game.add.sprite(0, 300, "hinweis1");
     // WORLD BOUNDS
     game.world.setBounds(0, 0, 20000, 800);
 

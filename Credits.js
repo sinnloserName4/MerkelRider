@@ -1,5 +1,5 @@
 ﻿function Credits() {
-    var creditsText = "MERKEL RIDER \n \n \n \n (C) Gzae Bonacci Productions \n \n \n \n \n test";
+    var creditsText = "\n \n \n MERKEL RIDER \n \n \n \n (C) Gzae Bonacci Productions \n \n \n \n \n test";
 
     var style = { font: "55px Arial", fill: "#ffffff", align: "center" };
 

@@ -22,6 +22,7 @@ function preload()
     game.load.image("hugesnowflake", "content/hugesnowflake.png");
     game.load.image("merkel", "content/merkel.png");
     game.load.image("nextLevel", "content/start_game.png");
+    game.load.image("hinweis1", "content/joachim_hinweis1.png");
 
     game.time.advancedTiming = true;
 }

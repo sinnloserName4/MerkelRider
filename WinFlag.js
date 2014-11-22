@@ -8,6 +8,6 @@
     this.sprite.body.static = true;
 }
 
-Winflag.prototype.delete = function () {
+WinFlag.prototype.delete = function () {
     this.sprite.destroy();
 }
