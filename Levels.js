@@ -106,7 +106,7 @@ function Level2()
     // BACKGROUND SPRITE
     this.background = new Background(0, 1500, "city_back");
     // DAILY JOACHIM
-    this.joachim = game.add.sprite(0, 903, "hinweis1");
+    this.joachim = game.add.sprite(0, 903, "hinweis2");
     // MAIN CHARACTER
     m = new Merkel(200, 1300);
     // GROUND
@@ -168,13 +168,13 @@ Level2.prototype.reset = function () {
 function Level3() {
     this.level = 3;
     // BACKGROUND COLOR
-    game.stage.backgroundColor = '#4AB1EB';
+    game.stage.backgroundColor = '#1D1C49';
     // WORLD BOUNDS
     game.world.setBounds(0, 0, 20000, 1500);
     // BACKGROUND SPRITE
     this.background = new Background(0, 1500, "city_back");
     // DAILY JOACHIM
-    this.joachim; // = game.add.sprite(0, 903, "hinweis1");
+    this.joachim  = game.add.sprite(0, 903, "hinweis3");
     // MAIN CHARACTER
     m = new Merkel(200, 1300);
     // GROUND
@@ -207,13 +207,12 @@ function Level3() {
     Obstacles[19] = new Car(13000, 1450, "van");
     Obstacles[20] = new Rampe(16000, 1450);
     Obstacles[21] = new Box(16300, 1450);
-
-
-
-
-    
    
     this.win = new WinFlag(18000, 1450);
+
+    this.joachimclapping = game.add.sprite(18000, 1100, "clapping");
+    this.joachimclapping.animations.add("klatschen");
+    this.joachimclapping.animations.play("klatschen");
 }
 
 Level3.prototype.update = function () {

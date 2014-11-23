@@ -64,7 +64,7 @@ function preload()
     game.load.image("sunset_back", "content/background_sunset.png");
     game.load.image("city_back", "content/city_background.png");
 
-    game.load.spritesheet("clapping","content/xxx.png", 170,113);
+    game.load.spritesheet("clapping","content/sauer.png", 170,113);
 
     game.time.advancedTiming = true;
 }
