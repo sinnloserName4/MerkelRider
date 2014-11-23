@@ -24,7 +24,7 @@ MainMenu.prototype.reset = function () {
 
 MainMenu.prototype.startGame = function() {
     this.delete();
-    currentState = new Level3();
+    currentState = new Level1();
     snow = new Snow();
 }
 
