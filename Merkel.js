@@ -13,6 +13,10 @@ function Merkel(_x, _y)
     this.counter = 0;
     this.groundcounter1 = 0;
     this.groundcounter2 = 0;
+
+    this.backFlipStarted = false;
+    this.frontFlipStarted = false;
+
 }
 
 Merkel.prototype.handleInput = function ()
