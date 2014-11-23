@@ -1,7 +1,7 @@
 ﻿function Ground(_x, _y) {
     this.sprite = game.add.sprite(_x, _y, "ground");
 
-    game.physics.p2.enable(this.sprite, true);
+    game.physics.p2.enable(this.sprite);
 
     this.sprite.body.clearShapes();
     this.sprite.body.setRectangle(game.world.width, 30);

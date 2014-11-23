@@ -1,5 +1,5 @@
 ﻿function Poller(_x, _y) {
-    this.sprite = game.add.sprite(_x, _y-50, "bollard");
+    this.sprite = game.add.sprite(_x, _y-48, "bollard");
 
     game.physics.p2.enable(this.sprite);
 

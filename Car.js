@@ -3,7 +3,7 @@
     switch(type)
     {
         case "car1":
-                this.sprite = game.add.sprite(_x, _y - 125, "car1");
+                this.sprite = game.add.sprite(_x, _y - 124, "car1");
                 game.physics.p2.enable(this.sprite);
                 this.sprite.body.data.gravityScale = 0;
                 this.sprite.body.clearShapes();
@@ -13,7 +13,7 @@
             break;
 
         case "car2":
-                this.sprite = game.add.sprite(_x, _y - 125, "car2");
+                this.sprite = game.add.sprite(_x, _y - 124, "car2");
                 game.physics.p2.enable(this.sprite);
                 this.sprite.body.data.gravityScale = 0;
                 this.sprite.body.clearShapes();
@@ -23,7 +23,7 @@
             break;
 
         case "sportcar":
-                this.sprite = game.add.sprite(_x, _y - 95, "sportcar");
+                this.sprite = game.add.sprite(_x, _y - 94, "sportcar");
                 game.physics.p2.enable(this.sprite);
                 this.sprite.body.data.gravityScale = 0;
                 this.sprite.body.clearShapes();
@@ -33,7 +33,7 @@
             break;
 
         case "truck":
-                this.sprite = game.add.sprite(_x, _y - 201, "truck");
+                this.sprite = game.add.sprite(_x, _y - 200, "truck");
                 game.physics.p2.enable(this.sprite);
                 this.sprite.body.data.gravityScale = 0;
                 this.sprite.body.clearShapes();
@@ -43,7 +43,7 @@
             break;
 
         case "van":
-                this.sprite = game.add.sprite(_x, _y - 220, "van");
+                this.sprite = game.add.sprite(_x, _y - 219, "van");
                 game.physics.p2.enable(this.sprite);
                 this.sprite.body.data.gravityScale = 0;
                 this.sprite.body.clearShapes();

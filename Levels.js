@@ -12,16 +12,16 @@
     // MAIN CHARACTER
     m = new Merkel(200, 800);
     // GROUND
-    this.ground = new Ground(0, 1015);
+    this.ground = new Ground(0, 915);
     // CAMERA
     game.camera.follow(m.chopper.bike);
     // OBSTACLES
-    Obstacles[0] = new Rampe(400, 1000);
-    Obstacles[1] = new Car(1200, 1000, "van");
-    Obstacles[2] = new Car(1900, 1000, "van");
-    Obstacles[3] = new Poller(2900, 1000, "van");
-    Obstacles[4] = new Poller(3000, 1000, "van");
-    Obstacles[5] = new Poller(3100, 1000, "van");
+    Obstacles[0] = new Rampe(400, 900);
+    Obstacles[1] = new Car(1200, 900, "van");
+    Obstacles[2] = new Car(1900, 900, "van");
+    Obstacles[3] = new Poller(2900, 900);
+    Obstacles[4] = new Poller(3000, 900);
+    Obstacles[5] = new Poller(3100, 900);
 
 }
 
