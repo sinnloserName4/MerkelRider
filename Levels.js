@@ -195,16 +195,15 @@ function Level3() {
 
     Obstacles[6] = new Poller(6000, 1450);
     Obstacles[7] = new Rampe(7000, 1450);
-    Obstacles[8] = new Box(8700, 1450);
-    Obstacles[9] = new Box(9000, 1450);
-    Obstacles[10] = new Box(9300, 1450);
-    Obstacles[11] = new Car(9050, 1250, "van");
+    Obstacles[8] = new Box(9000, 1450);
+    Obstacles[9] = new Box(9300, 1450);
+    Obstacles[10] = new Car(9050, 1250, "van");
 
-    Obstacles[12] = new Car(14000, 1450, "sportcar");
-    Obstacles[13] = new Box(14450, 1450);
+    Obstacles[11] = new Car(14000, 1450, "sportcar");
+    Obstacles[12] = new Box(14450, 1450);
 
-    Obstacles[14] = new Car(15000, 1450, "truck");
-    Obstacles[15] = new Car(17500, 1450, "van");
+    Obstacles[13] = new Car(15000, 1450, "truck");
+    Obstacles[14] = new Car(17500, 1450, "van");
 
 
     this.joachimclapping = game.add.sprite(18000, 1100, "clapping");
