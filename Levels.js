@@ -61,10 +61,6 @@
     Obstacles[26] = new Poller(16650, 1460);
     Obstacles[26].sprite.scale.y = 0.85;
 
-    this.joachimclapping = game.add.sprite(100, 1100, "clapping");
-    this.joachimclapping.animations.add("klatschen");
-    this.joachimclapping.animations.play("klatschen", 4, true);
-
     this.win = new WinFlag(19000, 1450);
 
 }
@@ -211,7 +207,7 @@ function Level3() {
 
     this.joachimclapping = game.add.sprite(18000, 1100, "clapping");
     this.joachimclapping.animations.add("klatschen");
-    this.joachimclapping.animations.play("klatschen", 3, true);
+    this.joachimclapping.animations.play("klatschen", 8, true);
 
     this.win = new WinFlag(18000, 1450);
 }
