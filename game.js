@@ -27,6 +27,8 @@ function preload()
     game.load.image("merkel", "content/merkel.png");
     game.load.image("nextLevel", "content/nextlevel.png");
     game.load.image("hinweis1", "content/joachim_hinweis1.png");
+    game.load.image("hinweis2", "content/joachim_hinweis2.png");
+    game.load.image("hinweis3", "content/joachim_hinweis3.png");
     game.load.image("ground", "content/ground.png");
     game.load.image("box", "content/box.png");
     game.load.image("explosion", "content/explosion.png");
@@ -61,6 +63,8 @@ function preload()
     game.load.image("night_back", "content/background_night.png");
     game.load.image("sunset_back", "content/background_sunset.png");
     game.load.image("city_back", "content/city_background.png");
+
+    game.load.spritesheet("clapping","content/xxx.png", 170,113);
 
     game.time.advancedTiming = true;
 }
