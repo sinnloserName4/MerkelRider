@@ -17,15 +17,25 @@
     this.leftWheel.body.mass = 1;
     this.leftWheel.body.setCollisionGroup(this.bikeCollisionGroup);
     this.leftWheel.body.collideWorldBounds = true;
-    this.leftWheel.body.collides(ObstaclesCollisionGroup);
+    this.leftWheel.body.collides(ObstaclesCollisionGroup, SetOnGround1, this);
     this.leftWheel.body.collides(winFlagCollisionGroup, nextLevel, this);
+   
+    
 
     this.rightWheel.body.setCircle(25);
     this.rightWheel.body.mass = 1;
     this.rightWheel.body.setCollisionGroup(this.bikeCollisionGroup);
     this.rightWheel.body.collideWorldBounds = true;
-    this.rightWheel.body.collides(ObstaclesCollisionGroup);
+    this.rightWheel.body.collides(ObstaclesCollisionGroup, SetOnGround2, this);
     this.rightWheel.body.collides(winFlagCollisionGroup, nextLevel, this);
+
+    if (DEBUG)
+    {
+        this.leftWheel.body.debug = true;
+        this.rightWheel.body.debug = true;
+        this.bike.body.debug = true;
+        this.merkel.body.debug = true;
+    }
 
     this.bike.body.setRectangle(200, 80);
     this.bike.body.mass = 1;
