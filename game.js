@@ -9,6 +9,7 @@ var currentState;
 var Obstacles;
 var snow;
 var pausebutton;
+var schleier;
 
 function preload()
 {
@@ -25,6 +26,7 @@ function preload()
     game.load.image("nextLevel", "content/nextlevel.png");
     game.load.image("hinweis1", "content/joachim_hinweis1.png");
     game.load.image("ground", "content/ground.png");
+    game.load.image("explosion", "content/explosion.png");
 
     //pause menü
     game.load.image("pausemenu", "content/pausemenü.png");
@@ -38,6 +40,9 @@ function preload()
     game.load.image("restart_hover", "content/restart_hover.png");
     game.load.image("exit_hover", "content/exit_hover.png");
     game.load.image("level_geschafft", "content/levelgeschafft.png");
+    game.load.image("verloren", "content/verloren.png");
+    game.load.image("continue_disabled", "content/continue_disabled.png");
+    game.load.image("schleier", "content/schleier.png");
 
 
     game.load.image("car1", "content/car1.png");
@@ -61,9 +66,13 @@ function create()
     game.physics.startSystem(Phaser.Physics.P2JS);
     game.physics.p2.setImpactEvents(true);
     game.physics.p2.gravity.y = 300;
+
     arrowkeys = game.input.keyboard.createCursorKeys();
     ObstaclesCollisionGroup = game.physics.p2.createCollisionGroup();
     winFlagCollisionGroup = game.physics.p2.createCollisionGroup();
+
+    schleier = game.add.sprite(0, 0, "schleier");
+
     currentState = new MainMenu();        //start off with the main menu
 
     pausebutton = new Pause();
@@ -75,6 +84,7 @@ function create()
 function update()
 {
     currentState.update();
+    game.world.bringToTop(schleier);
 }
 
 function render()
