@@ -99,8 +99,8 @@ function update()
 
 function render()
 {
-    //if (DEBUG)
-    //{
+    if (DEBUG)
+    {
         game.debug.text(game.time.fps || '--', 2, 14, "#00ff00");
         game.debug.text(currentState.level, 2, 25, "#00ff00");
         game.debug.text(game.camera.position.x, 2, 45, "#00ff00");
@@ -111,5 +111,5 @@ function render()
         if ((currentState.level != "MainMenu") && (currentState.level != 0)) {
             game.debug.text("is on Ground:" + m.onGround, 2, 90, "#00ff00");
         }
-    //}
+    }
 }
