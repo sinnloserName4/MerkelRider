@@ -8,21 +8,41 @@
     // BACKGROUND SPRITE
     this.background = new Background(0, 1000, "city_back");
     // DAILY JOACHIM
-    this.joachim = game.add.sprite(0, 402, "hinweis1");
+    this.joachim = game.add.sprite(0, 403, "hinweis1");
     // MAIN CHARACTER
     m = new Merkel(200, 800);
     // GROUND
-    this.ground = new Ground(0, 915);
+    this.ground = new Ground(0, 965);
+    this.ground = new Ground(10100, 965);
     // CAMERA
     game.camera.follow(m.chopper.bike);
     // OBSTACLES
-    Obstacles[0] = new Rampe(400, 900);
-    Obstacles[1] = new Car(1200, 900, "van");
-    Obstacles[2] = new Car(1900, 900, "van");
-    Obstacles[3] = new Poller(2900, 900);
-    Obstacles[4] = new Poller(3000, 900);
-    Obstacles[5] = new Poller(3100, 900);
-    Obstacles[6] = new WinFlag(3500, 900);
+    Obstacles[0] = new Rampe(400, 950);
+    Obstacles[1] = new Car(1200, 950, "van");
+    Obstacles[2] = new Car(1900, 950, "van");
+    Obstacles[3] = new Poller(2900, 950);
+    Obstacles[4] = new Poller(2970, 940);
+    Obstacles[4].sprite.scale.y = 1.15;
+    Obstacles[5] = new Poller(3050, 960);
+    Obstacles[5].sprite.scale.y = 0.85;
+    Obstacles[6] = new Poller(3120, 950);
+    Obstacles[7] = new Poller(3180, 940);
+    Obstacles[7].sprite.scale.y = 1.15;
+    Obstacles[8] = new Poller(3250, 960);
+    Obstacles[8].sprite.scale.y = 0.85;
+    
+    Obstacles[9] = new Rampe(4500, 950);
+    Obstacles[10] = new Rampe(4810, 745);
+    Obstacles[11] = new Box(4827, 950);
+    Obstacles[11].sprite.scale.x = 1.01;
+    Obstacles[12] = new Rampe(5120, 540);
+    Obstacles[13] = new Box(5137, 950);
+    Obstacles[13].sprite.scale.x = 1.01;
+    Obstacles[14] = new Box(5137, 745);
+    Obstacles[14].sprite.scale.x = 1.01;
+    
+
+    this.win = new WinFlag(19000, 950);
 
 }
 
@@ -39,6 +59,7 @@ Level1.prototype.delete = function () {
         }
         Obstacles[i].delete();
     }
+    this.win.delete();
     this.joachim.destroy();
     this.background.delete();
     game.stage.backgroundColor = '#000000';
