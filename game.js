@@ -37,6 +37,7 @@ function preload()
     game.load.image("selectlevel_hover", "content/selectlevel_hover.png");
     game.load.image("restart_hover", "content/restart_hover.png");
     game.load.image("exit_hover", "content/exit_hover.png");
+    game.load.image("level_geschafft", "content/levelgeschafft.png");
 
 
     game.load.image("car1", "content/car1.png");

@@ -7,7 +7,7 @@
 
     this.x = game.camera.position.x - game.width / 2;
     this.y = game.camera.position.y - game.height / 2;
-    this.pauseMenu = game.add.sprite(this.x, this.y, "pausemenu");
+    this.pauseMenu = game.add.sprite(this.x, this.y, "level_geschafft");
 
     this.x += 210;
     this.y += 150;
@@ -93,7 +93,7 @@ NextLevel.prototype.delete = function () {
 
 NextLevel.prototype.continue = function () {
     this.delete();
-    switch (this.level) {
+    switch (this.last) {
         case 1:
             currentState = new Level2();
             break;
@@ -109,7 +109,22 @@ NextLevel.prototype.continue = function () {
 }
 NextLevel.prototype.restart = function(){
     this.delete();
-    currentState.reset();
+    switch (this.last) {
+        case 1:
+            currentState = new Level1();
+            break;
+        case 2:
+            currentState = new Level2();
+            break;
+        case 3:
+            currentState = new Level3();
+            break;
+        case 4:
+            currentState = new Level4();
+            break;
+        default:
+            break;
+    }
 }
 NextLevel.prototype.selectLevel = function(){
     this.delete();

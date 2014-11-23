@@ -22,6 +22,7 @@
     Obstacles[3] = new Poller(2900, 900);
     Obstacles[4] = new Poller(3000, 900);
     Obstacles[5] = new Poller(3100, 900);
+    Obstacles[6] = new WinFlag(3500, 900);
 
 }
 
