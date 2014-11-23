@@ -1,6 +1,6 @@
-﻿var FORWARD_SPEED = 15;
+﻿var FORWARD_SPEED = 20;
 var BACKWARD_SPEED = -5;
-var MAX_SPEED = 500;
+var MAX_SPEED = 1000;
 var MIN_SPEED = -300;
 var ROTATION_SPEED = 50;
 

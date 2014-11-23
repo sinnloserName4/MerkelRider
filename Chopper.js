@@ -71,7 +71,10 @@ Chopper.prototype.delete = function () {
     this.rightWheel.destroy();
     this.bike.destroy();
     this.merkel.destroy();
-    this.explosion.destroy();
+    if (this.explosion != undefined) {
+        this.explosion.kill();
+    }
+    this.explosionTween = undefined;
 }
 
 Chopper.prototype.die = function () {
