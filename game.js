@@ -30,6 +30,7 @@ function preload()
     game.load.image("ground", "content/ground.png");
     game.load.image("box", "content/box.png");
     game.load.image("explosion", "content/explosion.png");
+    game.load.image("baum", "content/tannenbaum.png");
 
 
     //pause menü

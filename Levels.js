@@ -17,9 +17,9 @@
     // CAMERA
     game.camera.follow(m.chopper.bike);
     // OBSTACLES
-    Obstacles[0] = new Rampe(400, 1450);
-    Obstacles[1] = new Car(2300, 1450, "van");
-    Obstacles[2] = new Car(4900, 1450, "car1");
+    Obstacles[0] = new Rampe(2400, 1450);
+    Obstacles[1] = new Car(4000, 1450, "van");
+    Obstacles[2] = new Car(6200, 1450, "car1");
     Obstacles[3] = new Poller(7300, 1450);
     Obstacles[4] = new Poller(7370, 1440);
     Obstacles[4].sprite.scale.y = 1.15;
@@ -44,7 +44,24 @@
     Obstacles[15] = new Car(12000, 1450, "car2");
     Obstacles[16] = new Car(12500, 1450, "sportcar");
     Obstacles[17] = new Car(13000, 1450, "truck");
-   
+
+    Obstacles[18] = new Car(14600, 1450, "car1");
+    Obstacles[19] = new Box(15000, 1450);
+    Obstacles[20] = new Car(17000, 1450, "sportcar");
+      
+
+    Obstacles[21] = new Poller(16300, 1450);
+    Obstacles[22] = new Poller(16370, 1440);
+    Obstacles[22].sprite.scale.y = 1.15;
+    Obstacles[23] = new Poller(16450, 1460);
+    Obstacles[23].sprite.scale.y = 0.85;
+    Obstacles[24] = new Poller(16520, 1450);
+    Obstacles[25] = new Poller(16580, 1440);
+    Obstacles[25].sprite.scale.y = 1.15;
+    Obstacles[26] = new Poller(16650, 1460);
+    Obstacles[26].sprite.scale.y = 0.85;
+
+  
     
 
     this.win = new WinFlag(19000, 1450);
@@ -121,24 +138,54 @@ Level2.prototype.reset = function () {
 }
 
 function Level3() {
+    this.level = 3;
+    // BACKGROUND COLOR
+    game.stage.backgroundColor = '#4AB1EB';
     // WORLD BOUNDS
-    game.world.setBounds(0, 0, 20000, 600);
-
+    game.world.setBounds(0, 0, 20000, 1500);
+    // BACKGROUND SPRITE
+    this.background = new Background(0, 1500, "city_back");
+    // DAILY JOACHIM
+    this.joachim; // = game.add.sprite(0, 903, "hinweis1");
     // MAIN CHARACTER
-    m = new Merkel(200, 600);
+    m = new Merkel(200, 1300);
+    // GROUND
+    this.ground = new Ground(0, 1465);
+    this.ground = new Ground(10100, 1465);
     // CAMERA
     game.camera.follow(m.chopper.bike);
-    // OBSTACLES
-    Obstacles[0] = new Rampe(500, 600);
-    Obstacles[1] = new Car(1500, 600);
-    Obstacles[2] = new Car(1850, 600);
-    Obstacles[3] = new Car(2200, 600);
-    Obstacles[4] = new Poller(2500, 600);
-    Obstacles[5] = new Poller(2590, 600);
-    Obstacles[6] = new Poller(2680, 600);
-    Obstacles[7] = new Ground(0, 615);
 
-    win = new WinFlag(4000, 550);
+
+    // OBSTACLES
+    Obstacles[0] = new Car(1000, 1450, "car1");
+    Obstacles[1] = new Car(1500, 1450, "car2");
+    Obstacles[2] = new Car(2100, 1450, "car1");
+    Obstacles[3] = new Car(2500, 1450, "sportcar");
+    Obstacles[4] = new Rampe(4000, 1450);
+    Obstacles[5] = new Poller(7000, 1440);
+    Obstacles[6] = new Poller(7060, 1460);
+    Obstacles[7] = new Poller(7120, 1450);
+    Obstacles[8] = new Poller(7500, 1460);
+    Obstacles[9] = new Poller(7580, 1450);
+    Obstacles[10] = new Poller(7650, 1440);
+    Obstacles[11] = new Rampe(8500, 1450);
+    Obstacles[12] = new Car(9500, 1450,"car1");
+    Obstacles[13] = new Car(10000, 1450,"car1");
+    Obstacles[14] = new Car(9750, 1350, "sportcar");
+    Obstacles[15] = new Car(10400, 1450, "car2");
+    Obstacles[16] = new Car(10200, 1350, "sportcar");
+    Obstacles[17] = new Car(10000, 1270, "sportcar");
+    Obstacles[18] = new Car(12000, 1450, "truck");
+    Obstacles[19] = new Car(13000, 1450, "van");
+    Obstacles[20] = new Rampe(16000, 1450);
+    Obstacles[21] = new Box(16300, 1450);
+
+
+
+
+    
+   
+    this.win = new WinFlag(18000, 1450);
 }
 
 Level3.prototype.update = function () {
@@ -148,18 +195,21 @@ Level3.prototype.update = function () {
 
 Level3.prototype.delete = function () {
     m.delete();
+    console.log("le");
     for (var i = 0; i < Obstacles.length; i++) {
         if (Obstacles[i] === undefined) {
             break;
         }
         Obstacles[i].delete();
     }
+    this.win.delete();
+    //this.joachim.destroy();
+    this.background.delete();
+    game.stage.backgroundColor = '#000000';
 }
 
 Level3.prototype.reset = function () {
     this.delete();
+    currentState = new Level3();
 }
 
-Level3.prototype.next = function () {
-    this.delete();
-}
