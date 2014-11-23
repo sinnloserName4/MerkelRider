@@ -9,6 +9,8 @@ function Merkel(_x, _y)
 {
     this.chopper = new Chopper(_x, _y);
     this.UpsideDown = false;
+    this.backFlipStarted = false;
+    this.frontFlipStarted = false;
 }
 
 Merkel.prototype.handleInput = function ()

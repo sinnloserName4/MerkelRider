@@ -26,11 +26,8 @@ function preload()
     game.load.image("nextLevel", "content/nextlevel.png");
     game.load.image("hinweis1", "content/joachim_hinweis1.png");
     game.load.image("ground", "content/ground.png");
-<<<<<<< HEAD
     game.load.image("box", "content/box.png");
-=======
     game.load.image("explosion", "content/explosion.png");
->>>>>>> origin/master
 
     //pause menü
     game.load.image("pausemenu", "content/pausemenü.png");
