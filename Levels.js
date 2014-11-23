@@ -94,9 +94,84 @@ Level1.prototype.reset = function () {
 
 function Level2()
 {
+
     this.level = 2;
+
     // BACKGROUND COLOR
     game.stage.backgroundColor = '#39378E';
+    // WORLD BOUNDS
+    game.world.setBounds(0, 0, 20000, 1500);
+    // BACKGROUND SPRITE
+    this.background = new Background(0, 1500, "city_back");
+    // DAILY JOACHIM
+    this.joachim = game.add.sprite(0, 903, "hinweis2");
+    // MAIN CHARACTER
+    m = new Merkel(200, 1300);
+    // GROUND
+    this.ground = new Ground(0, 1465);
+    this.ground = new Ground(10100, 1465);
+    // CAMERA
+    game.camera.follow(m.chopper.bike);
+    // OBSTACLES
+    Obstacles[0] = new Car(1000, 1450, "van");
+    Obstacles[1] = new Box(2310, 1450);
+    Obstacles[1].sprite.scale.x = 1.01;
+    Obstacles[2] = new Box(2617, 1450);
+    Obstacles[2].sprite.scale.x = 1.01;
+    Obstacles[3] = new Rampe(2600, 1245);
+    Obstacles[4] = new Car(3600, 1450, "truck");
+    Obstacles[5] = new Car(4600, 1450, "sportcar");
+
+    Obstacles[6] = new Poller(6000, 1450);
+    Obstacles[7] = new Rampe(7000, 1450);
+    Obstacles[8] = new Box(9000, 1450);
+    Obstacles[9] = new Box(9300, 1450);
+    Obstacles[10] = new Car(9050, 1250, "van");
+
+    Obstacles[11] = new Car(14000, 1450, "sportcar");
+    Obstacles[12] = new Box(14450, 1450);
+
+    Obstacles[13] = new Car(15000, 1450, "truck");
+    Obstacles[14] = new Car(17500, 1450, "van");
+
+    this.win = new WinFlag(19000, 1450);
+}
+
+Level2.prototype.update = function () 
+{
+    m.handleInput();
+    m.checkForFlip();
+    snow.update();
+}
+
+Level2.prototype.delete = function () {
+    m.delete();
+    for (var i = 0; i < Obstacles.length; i++) {
+        if (Obstacles[i] === undefined) {
+            break;
+        }
+        Obstacles[i].delete();
+    }
+    this.win.delete();
+    this.joachim.destroy();
+    this.background.delete();
+    game.stage.backgroundColor = '#000000';
+}
+
+Level2.prototype.reset = function () {
+    this.delete();
+    currentState = new Level2();
+}
+
+function Level3() {
+
+    this.joachimclapping = game.add.sprite(18000, 1100, "clapping");
+    this.joachimclapping.animations.add("klatschen");
+    this.joachimclapping.animations.play("klatschen", 8, true);
+
+    this.level = 2;
+    // BACKGROUND COLOR
+    game.stage.backgroundColor = '#1D1C49';
     // WORLD BOUNDS
     game.world.setBounds(0, 0, 20000, 1500);
     // BACKGROUND SPRITE
@@ -137,80 +212,6 @@ function Level2()
     Obstacles[21] = new Box(16300, 1450);
 
     this.win = new WinFlag(18000, 1450);
-}
-
-Level2.prototype.update = function () 
-{
-    m.handleInput();
-    m.checkForFlip();
-    snow.update();
-}
-
-Level2.prototype.delete = function () {
-    m.delete();
-    for (var i = 0; i < Obstacles.length; i++) {
-        if (Obstacles[i] === undefined) {
-            break;
-        }
-        Obstacles[i].delete();
-    }
-    this.win.delete();
-    this.joachim.destroy();
-    this.background.delete();
-    game.stage.backgroundColor = '#000000';
-}
-
-Level2.prototype.reset = function () {
-    this.delete();
-    currentState = new Level2();
-}
-
-function Level3() {
-    this.level = 3;
-
-    // BACKGROUND COLOR
-    game.stage.backgroundColor = '#1D1C49';
-    // WORLD BOUNDS
-    game.world.setBounds(0, 0, 20000, 1500);
-    // BACKGROUND SPRITE
-    this.background = new Background(0, 1500, "city_back");
-    // DAILY JOACHIM
-    this.joachim = game.add.sprite(0, 903, "hinweis2");
-    // MAIN CHARACTER
-    m = new Merkel(200, 1300);
-    // GROUND
-    this.ground = new Ground(0, 1465);
-    this.ground = new Ground(10100, 1465);
-    // CAMERA
-    game.camera.follow(m.chopper.bike);
-    // OBSTACLES
-    Obstacles[0] = new Car(1000, 1450, "van");
-    Obstacles[1] = new Box(2310, 1450);
-    Obstacles[1].sprite.scale.x = 1.01;
-    Obstacles[2] = new Box(2617, 1450);
-    Obstacles[2].sprite.scale.x = 1.01;
-    Obstacles[3] = new Rampe(2600, 1245);
-    Obstacles[4] = new Car(3600, 1450, "truck");
-    Obstacles[5] = new Car(4600, 1450, "sportcar");
-
-    Obstacles[6] = new Poller(6000, 1450);
-    Obstacles[7] = new Rampe(7000, 1450);
-    Obstacles[8] = new Box(9000, 1450);
-    Obstacles[9] = new Box(9300, 1450);
-    Obstacles[10] = new Car(9050, 1250, "van");
-
-    Obstacles[11] = new Car(14000, 1450, "sportcar");
-    Obstacles[12] = new Box(14450, 1450);
-
-    Obstacles[13] = new Car(15000, 1450, "truck");
-    Obstacles[14] = new Car(17500, 1450, "van");
-
-
-    this.joachimclapping = game.add.sprite(18000, 1100, "clapping");
-    this.joachimclapping.animations.add("klatschen");
-    this.joachimclapping.animations.play("klatschen", 8, true);
-
-    this.win = new WinFlag(19000, 1450);
 }
 
 Level3.prototype.update = function () {
