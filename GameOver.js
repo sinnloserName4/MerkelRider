@@ -76,6 +76,7 @@ GameOver.prototype.delete = function () {
 }
 
 GameOver.prototype.restart = function () {
+
     this.delete();
     switch (this.current) {
         case 1:
@@ -101,4 +102,5 @@ GameOver.prototype.selectLevel = function () {
 GameOver.prototype.exit = function () {
     this.delete();
     currentState = new MainMenu();
+    
 }

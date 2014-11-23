@@ -134,9 +134,3 @@ NextLevel.prototype.exit = function(){
     this.delete();
     currentState = new MainMenu();
 }
-
-function Next()
-{
-    //switchCase
-    currentState = new MainMenu();
-}

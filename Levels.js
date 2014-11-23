@@ -70,6 +70,7 @@
 
 Level1.prototype.update = function () {
     m.handleInput();
+    m.checkForFlip();
     snow.update();
 }
 

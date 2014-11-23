@@ -77,14 +77,34 @@
 }
 
 Chopper.prototype.delete = function () {
-    this.leftWheel.destroy();
-    this.rightWheel.destroy();
-    this.bike.destroy();
-    this.merkel.destroy();
-    if (this.explosion != undefined) {
-        this.explosion.kill();
+    if (this.leftWheel != undefined) {
+        this.leftWheel.destroy();
     }
-    this.explosionTween = undefined;
+    if (this.rightWheel != undefined) {
+        this.rightWheel.destroy();
+    }
+    if (this.bike != undefined) {
+        this.bike.destroy();
+    }
+    if (this.merkel != undefined) {
+        this.merkel.destroy();
+    }
+    if (this.explosionTween != undefined) {
+        if (!this.explosionTween.isRunning) {
+            if (this.explosion != undefined) {
+                this.explosion.destroy();
+            }
+            this.explosionTween = undefined;
+        }
+    }
+}
+
+Chopper.prototype.hide = function () {
+    this.leftWheel.alpha = 0;
+    this.rightWheel.alpha = 0;
+    this.bike.alpha = 0;
+    this.merkel.alpha = 0;
+    game.camera.unfollow();
 }
 
 Chopper.prototype.die = function () {
@@ -94,12 +114,14 @@ Chopper.prototype.die = function () {
         this.explosion.scale.x = 0.1;
         this.explosion.scale.y = 0.1;
         this.explosionTween = game.add.tween(this.explosion.scale).to({ x: 2, y: 2 }, 300, Phaser.Easing.Linear.None, true, 0, 0, false);
+        this.explosionAlpha = game.add.tween(this.explosion).to({ alpha: 0 }, 1200, Phaser.Easing.Linear.None, true, 0, 0, false);
         game.add.tween(this.explosion).to({ y: this.bike.y - 300 }, 300, Phaser.Easing.Linear.None, true, 0, 0, false);
-        this.explosionTween.onComplete.add(dead);
+        this.explosionAlpha.onComplete.add(this.dead);
+        this.hide();
     }
 }
 
-function dead() {
+Chopper.prototype.dead = function () {
     currentState = new GameOver(currentState.level);
 }
 
