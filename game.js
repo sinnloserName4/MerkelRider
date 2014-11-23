@@ -33,6 +33,8 @@ function preload()
     game.load.image("box", "content/box.png");
     game.load.image("explosion", "content/explosion.png");
     game.load.image("baum", "content/tannenbaum.png");
+    game.load.image("frontflip", "content/frontflip.png");
+    game.load.image("backflip", "content/backflip.png");
 
 
     //pause menü

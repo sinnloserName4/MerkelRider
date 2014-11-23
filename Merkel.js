@@ -19,12 +19,12 @@ function Merkel(_x, _y)
     this.frontFlip[1] = false;
     this.frontFlip[2] = false;
 
-    this.backflip_splash = game.add.sprite(200, 200,"backflip");
+    this.backflip_splash = game.add.sprite(270, 200,"backflip");
     this.backflip_splash.fixedToCamera = true;
     this.backflip_splash.alpha = 0;
     this.backflip_tween;
 
-    this.frontflip_splash = game.add.sprite(200, 200, "frontflip");
+    this.frontflip_splash = game.add.sprite(270, 200, "frontflip");
     this.frontflip_splash.fixedToCamera = true;
     this.frontflip_splash.alpha = 0;
     this.frontflip_tween;
