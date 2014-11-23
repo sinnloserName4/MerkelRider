@@ -7,12 +7,12 @@
     game.world.setBounds(0, 0, 20000, 1000);
     // BACKGROUND SPRITE
     this.background = new Background(0, 1000, "city_back");
-    // GROUND
-    this.ground = new Ground(0, 1015);
     // DAILY JOACHIM
     this.joachim = game.add.sprite(0, 402, "hinweis1");
     // MAIN CHARACTER
     m = new Merkel(200, 800);
+    // GROUND
+    this.ground = new Ground(0, 1015);
     // CAMERA
     game.camera.follow(m.chopper.bike);
     // OBSTACLES
