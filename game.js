@@ -39,6 +39,12 @@ function preload()
     game.load.image("truck", "content/truck.png");
     game.load.image("van", "content/van.png");
     
+    //background
+    game.load.image("clean_back", "content/background_clean.png");
+    game.load.image("night_back", "content/background_night.png");
+    game.load.image("sunset_back", "content/background_sunset.png");
+    game.load.image("city_back", "content/city_background.png");
+
     game.time.advancedTiming = true;
 }
 

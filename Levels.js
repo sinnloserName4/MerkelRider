@@ -10,18 +10,20 @@ Level1.prototype.update = function () {
 function Level2()
 {
     this.level = 2;
-
-    this.joachim = game.add.sprite(0, 300, "hinweis1");
+    
+    game.stage.backgroundColor = '#4AB1EB';
     // WORLD BOUNDS
-    game.world.setBounds(0, 0, 20000, 800);
+    game.world.setBounds(0, 0, 20000, 950);
+    this.background = new Background(0, 950, "city_back");
+    this.joachim = game.add.sprite(0, 400, "hinweis1");
 
     // MAIN CHARACTER
-    m = new Merkel(200, 600);
+    m = new Merkel(200, 800);
     // CAMERA
     game.camera.follow(m.chopper.bike);
     // OBSTACLES
-    Obstacles[0] = new Car(500, 800, "van");
-    Obstacles[1] = new WinFlag(2000, 500);
+    Obstacles[0] = new Car(500, 950, "van");
+    Obstacles[1] = new WinFlag(2000, 950);
 }
 
 Level2.prototype.update = function () 
@@ -39,6 +41,8 @@ Level2.prototype.delete = function () {
         Obstacles[i].delete();
     }
     this.joachim.destroy();
+    this.background.delete();
+    game.stage.backgroundColor = '#000000';
 }
 
 Level2.prototype.reset = function () {
