@@ -7,7 +7,8 @@ var ROTATION_SPEED = 50;
 
 function Merkel(_x, _y)
 {
-    this.chopper = new Chopper(_x,_y);
+    this.chopper = new Chopper(_x, _y);
+    this.UpsideDown = false;
 }
 
 Merkel.prototype.handleInput = function ()
@@ -51,4 +52,18 @@ Merkel.prototype.Accelerate = function ()
 
 Merkel.prototype.delete = function () {
     this.chopper.delete();
+}
+
+Merkel.prototype.checkForFlip = function () {
+    var delta = 10;
+    if ((this.chopper.rightWheel.y - this.chopper.leftWheel.y) < delta) {
+        if ((this.chopper.rightWheel.y < this.chopper.bike.y)) {
+            this.UpsideDown = true;
+        }
+        else if (this.UpsideDown) {
+            this.UpsideDown = false;
+            return true;
+        }
+    }
+    return false;
 }

@@ -93,4 +93,7 @@ function render()
     game.debug.text(currentState.level, 2, 25, "#00ff00");
     game.debug.text(game.camera.position.x, 2, 45, "#00ff00");
     game.debug.text(game.camera.position.y, 2, 60, "#00ff00");
+    if ((currentState.level != "MainMenu") && (currentState.level != 0)) {
+        game.debug.text(m.checkForFlip() || '--', 2, 75, "#00ff00");
+    }
 }
