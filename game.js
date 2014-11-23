@@ -1,4 +1,4 @@
-﻿var game = new Phaser.Game(800, 600, Phaser.AUTO, "", { preload: preload, create: create, update: update, render: render });
+﻿var game = new Phaser.Game(800, 600, Phaser.AUTO, "", { preload: preload, create: create, update: update, pauseUpdate: pauseUpdate, render: render });
 
 var arrowkeys;
 var m;
@@ -32,6 +32,11 @@ function preload()
     game.load.image("selectlevel", "content/selectlevel.png");
     game.load.image("restart", "content/restart.png");
     game.load.image("exit", "content/exit.png");
+    game.load.image("continue_hover", "content/continue_hover.png");
+    game.load.image("selectlevel_hover", "content/selectlevel_hover.png");
+    game.load.image("restart_hover", "content/restart_hover.png");
+    game.load.image("exit_hover", "content/exit_hover.png");
+
 
     game.load.image("car1", "content/car1.png");
     game.load.image("car2", "content/car2.png");

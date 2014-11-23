@@ -1,9 +1,18 @@
 ﻿function Pause() {
     this.pauseMenu;
+
     this.continueButton;
+    this.continueHover;
+
     this.restartButton;
+    this.restartHover;
+
     this.selectLevelButton;
+    this.selectLevelHover;
+
     this.exitButton;
+    this.exitHover;
+
     this.x = 0;
     this.y = 0;
     //^initialisierung von variablen.. kann evtl weg
@@ -25,6 +34,16 @@ Pause.prototype.pause = function () {
     this.selectLevelButton = game.add.sprite(this.x + 100, this.y + 200, "selectlevel");
     this.exitButton = game.add.sprite(this.x + 130, this.y + 250, "exit");
 
+    this.continueHover = game.add.sprite(this.x + 100, this.y + 85, "continue_hover");
+    this.restartHover = game.add.sprite(this.x + 125, this.y + 140, "restart_hover");
+    this.selectLevelHover = game.add.sprite(this.x + 100, this.y + 200, "selectlevel_hover");
+    this.exitHover = game.add.sprite(this.x + 130, this.y + 250, "exit_hover");
+
+    this.continueHover.alpha = 0;
+    this.restartHover.alpha = 0;
+    this.selectLevelHover.alpha = 0;
+    this.exitHover.alpha = 0;
+
     game.paused = true;
 }
 
@@ -35,6 +54,10 @@ Pause.prototype.delete = function () {
     this.restartButton.destroy();
     this.selectLevelButton.destroy();
     this.exitButton.destroy();
+    this.continueHover.destroy();
+    this.restartHover.destroy();
+    this.selectLevelHover.destroy();
+    this.exitHover.destroy();
     game.paused = false;
 }
 
@@ -61,6 +84,44 @@ function unpause(event) {
         if (pausebutton.contains(event.x, event.y, pausebutton.exitButton)) {
             pausebutton.exit();
         }
+    }
+}
+
+function pauseUpdate() {
+    if (pausebutton.contains(game.input.x, game.input.y, pausebutton.continueButton)) {
+        pausebutton.continueButton.alpha = 0;
+        pausebutton.continueHover.alpha = 1;
+    }
+    else {
+        pausebutton.continueButton.alpha = 1;
+        pausebutton.continueHover.alpha = 0;
+    }
+
+    if (pausebutton.contains(game.input.x, game.input.y, pausebutton.restartButton)) {
+        pausebutton.restartButton.alpha = 0;
+        pausebutton.restartHover.alpha = 1;
+    }
+    else {
+        pausebutton.restartButton.alpha = 1;
+        pausebutton.restartHover.alpha = 0;
+    }
+
+    if (pausebutton.contains(game.input.x, game.input.y, pausebutton.selectLevelButton)) {
+        pausebutton.selectLevelButton.alpha = 0;
+        pausebutton.selectLevelHover.alpha = 1;
+    }
+    else {
+        pausebutton.selectLevelButton.alpha = 1;
+        pausebutton.selectLevelHover.alpha = 0;
+    }
+
+    if (pausebutton.contains(game.input.x, game.input.y, pausebutton.exitButton)) {
+        pausebutton.exitButton.alpha = 0;
+        pausebutton.exitHover.alpha = 1;
+    }
+    else {
+        pausebutton.exitButton.alpha = 1;
+        pausebutton.exitHover.alpha = 0;
     }
 }
 
