@@ -28,6 +28,8 @@ function preload()
     game.load.image("ground", "content/ground.png");
     game.load.image("box", "content/box.png");
     game.load.image("explosion", "content/explosion.png");
+    game.load.image("backflip", "content/backflip.png");
+    game.load.image("frontflip", "content/frontflip.png");
 
     //pause menü
     game.load.image("pausemenu", "content/pausemenü.png");
@@ -85,6 +87,7 @@ function create()
 function update()
 {
     currentState.update();
+    game.world.bringToTop(pausebutton.pausebutton);
     game.world.bringToTop(schleier);
 }
 
@@ -94,7 +97,4 @@ function render()
     game.debug.text(currentState.level, 2, 25, "#00ff00");
     game.debug.text(game.camera.position.x, 2, 45, "#00ff00");
     game.debug.text(game.camera.position.y, 2, 60, "#00ff00");
-    if ((currentState.level != "MainMenu") && (currentState.level != 0)) {
-        game.debug.text(m.checkForFlip() || '--', 2, 75, "#00ff00");
-    }
 }

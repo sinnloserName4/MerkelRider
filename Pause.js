@@ -143,7 +143,7 @@ Pause.prototype.exit = function () {
     currentState.delete();
     game.camera.reset();
     pausebutton.pausebutton.alpha = 0;
-    if (currentState.level != 0) {
+    if (currentState.level != "MainMenu") {
         currentState = new MainMenu();
     }
 }
