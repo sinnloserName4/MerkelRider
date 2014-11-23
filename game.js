@@ -11,6 +11,8 @@ var snow;
 var pausebutton;
 var schleier;
 
+var DEBUG = false;
+
 function preload()
 {
     game.load.image("chopper", "content/chopper2.png");
@@ -30,6 +32,7 @@ function preload()
     game.load.image("explosion", "content/explosion.png");
     game.load.image("backflip", "content/backflip.png");
     game.load.image("frontflip", "content/frontflip.png");
+
 
     //pause menü
     game.load.image("pausemenu", "content/pausemenü.png");
@@ -89,6 +92,7 @@ function update()
     currentState.update();
     game.world.bringToTop(pausebutton.pausebutton);
     game.world.bringToTop(schleier);
+    
 }
 
 function render()
@@ -97,4 +101,17 @@ function render()
     game.debug.text(currentState.level, 2, 25, "#00ff00");
     game.debug.text(game.camera.position.x, 2, 45, "#00ff00");
     game.debug.text(game.camera.position.y, 2, 60, "#00ff00");
+    //if (DEBUG)
+    //{
+        game.debug.text(game.time.fps || '--', 2, 14, "#00ff00");
+        game.debug.text(currentState.level, 2, 25, "#00ff00");
+        game.debug.text(game.camera.position.x, 2, 45, "#00ff00");
+        game.debug.text(game.camera.position.y, 2, 60, "#00ff00");
+        if ((currentState.level != "MainMenu") && (currentState.level != 0)) {
+            game.debug.text("flip:" + m.checkForFlip() || '--', 2, 75, "#00ff00");
+        }
+        if ((currentState.level != "MainMenu") && (currentState.level != 0)) {
+            game.debug.text("is on Ground:" + m.onGround, 2, 90, "#00ff00");
+        }
+    //}
 }
