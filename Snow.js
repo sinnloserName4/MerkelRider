@@ -34,7 +34,7 @@ Snow.prototype.createSnowFlakes = function() {
 
 Snow.prototype.update = function () {
     this.tinySnowFlakes.forEach(function (item) {
-        if (item.body.y > 800) {
+        if (item.body.y > game.world.height) {
             item.body.x = game.world.randomX;
             item.body.y = -50;
         }
@@ -43,7 +43,7 @@ Snow.prototype.update = function () {
 
     });
     this.mediumSnowFlakes.forEach(function (item) {
-        if (item.body.y > 800) {
+        if (item.body.y > game.world.height) {
             item.body.x = game.world.randomX;
             item.body.y = -50;
         }
@@ -51,7 +51,7 @@ Snow.prototype.update = function () {
         item.body.velocity.y = 150;
     });
     this.hugeSnowFlakes.forEach(function (item) {
-        if (item.body.y > 800) {
+        if (item.body.y > game.world.height) {
             item.body.x = game.world.randomX;
             item.body.y = -50;
         }

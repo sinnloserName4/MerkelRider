@@ -1,4 +1,7 @@
-﻿function Chopper(_x,_y) {
+﻿function Chopper(_x, _y) {
+    this.explosion;
+    this.explosionTween;
+
     this.leftWheel = game.add.sprite(_x-100, _y-25, "tire");
     this.rightWheel = game.add.sprite(_x + 100, _y-25, "tire");
     this.bike = game.add.sprite(_x, _y - 100, "chopper");
@@ -35,7 +38,7 @@
     this.merkel.body.mass = 1;
     this.merkel.body.setCollisionGroup(this.bikeCollisionGroup);
     this.merkel.body.collideWorldBounds = true;
-    this.merkel.body.collides(ObstaclesCollisionGroup, die, this);
+    this.merkel.body.collides(ObstaclesCollisionGroup, this.die, this);
     this.merkel.body.collides(winFlagCollisionGroup, nextLevel, this);
 
     //Spring(world, bodyA, bodyB, restLength, stiffness, damping, worldA, worldB, localA, localB)
@@ -68,10 +71,26 @@ Chopper.prototype.delete = function () {
     this.rightWheel.destroy();
     this.bike.destroy();
     this.merkel.destroy();
+    if (this.explosion != undefined) {
+        this.explosion.kill();
+    }
+    this.explosionTween = undefined;
 }
 
-function die() {
-    currentState.reset();
+Chopper.prototype.die = function () {
+    if (this.explosionTween === undefined) {
+        this.explosion = game.add.sprite(this.bike.x, this.bike.y, "explosion");
+        this.explosion.anchor.setTo(0.5, 0.5);
+        this.explosion.scale.x = 0.1;
+        this.explosion.scale.y = 0.1;
+        this.explosionTween = game.add.tween(this.explosion.scale).to({ x: 2, y: 2 }, 300, Phaser.Easing.Linear.None, true, 0, 0, false);
+        game.add.tween(this.explosion).to({ y: this.bike.y - 300 }, 300, Phaser.Easing.Linear.None, true, 0, 0, false);
+        this.explosionTween.onComplete.add(dead);
+    }
+}
+
+function dead() {
+    currentState = new GameOver(currentState.level);
 }
 
 function nextLevel() {
