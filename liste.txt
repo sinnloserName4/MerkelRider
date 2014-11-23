@@ -2,7 +2,6 @@ DINGE DIE WIR NOCH TUN WOLLEN
 
 - Front-/Backflip
 - Weihnachtsbaum malen
-- Autos malen
 - Joachim sinnvoll einfügen (am anfang von jedem level) + Text
 - Hintergrund
 - Bäume als Hindernisse
@@ -12,7 +11,13 @@ DINGE DIE WIR NOCH TUN WOLLEN
 - Level geschafft Screen
 - Levels bauen
 
+- Level einblenden
+
 (- Score / Highscore)
 (- Merkel mit Baum)
 (- wehender Mantel)
 ((- Schäuble))
+
+geschafft:
+- Autos malen
+- Pause Button

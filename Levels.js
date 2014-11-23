@@ -47,7 +47,7 @@ Level2.prototype.delete = function () {
 
 Level2.prototype.reset = function () {
     this.delete();
-    Level2();
+    currentState = new Level2();
 }
 
 Level2.prototype.next = function () {
