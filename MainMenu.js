@@ -20,7 +20,7 @@ function startGame() {
     this.startButton.destroy();
     this.credits.destroy();
     pausebutton.pausebutton.alpha = 1;
-    currentState = new Level2();
+    currentState = new Level1();
     snow = new Snow();
 }
 

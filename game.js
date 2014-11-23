@@ -16,7 +16,7 @@ function preload()
     game.load.image("tire", "content/tire.png");
     game.load.image("start_button", "content/start_game.png");
     game.load.image("credits", "content/credits.png");
-    game.load.image("poller", "content/poller.png")
+    game.load.image("bollard", "content/bollard.png")
     game.load.image("rampe", "content/rampe.png");
     game.load.image("tinysnowflake", "content/tinysnowflake.png");
     game.load.image("mediumsnowflake", "content/mediumsnowflake.png");

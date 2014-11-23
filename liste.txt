@@ -3,7 +3,6 @@ DINGE DIE WIR NOCH TUN WOLLEN
 - Front-/Backflip
 - Weihnachtsbaum malen
 - Joachim sinnvoll einfügen (am anfang von jedem level) + Text
-- Hintergrund
 - Bäume als Hindernisse
 - Musik
 - Soundeffekte
@@ -21,3 +20,4 @@ DINGE DIE WIR NOCH TUN WOLLEN
 geschafft:
 - Autos malen
 - Pause Button
+- Hintergrund
