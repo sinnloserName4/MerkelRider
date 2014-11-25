@@ -7,7 +7,7 @@ DINGE DIE WIR NOCH TUN WOLLEN
 - Musik
 - Soundeffekte
 - Explosion bei Tod
-- Level geschafft Screen
+
 - Levels bauen
 
 - Level einblenden
@@ -21,3 +21,4 @@ geschafft:
 - Autos malen
 - Pause Button
 - Hintergrund
+- Level geschafft Screen
